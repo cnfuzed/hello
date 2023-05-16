@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // Run Terraform commands
 		sh 'cd terraform' 
-                sh 'terraform init -lockfile=readonly'
+                sh 'terraform init -backend=false'
 		sh 'terraform plan'
                 sh 'terraform apply -auto-approve'
             }
