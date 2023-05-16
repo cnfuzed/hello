@@ -14,6 +14,7 @@ pipeline {
                 // Run Terraform commands
 		sh 'cd terraform' 
                 sh 'terraform init'
+		sh 'terraform plan'
                 sh 'terraform apply -auto-approve'
             }
         }
