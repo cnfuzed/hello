@@ -1,6 +1,3 @@
-
-**variables.tf**:
-```hcl
 variable "aws_access_key" {
   type        = string
   description = "AWS access key"
