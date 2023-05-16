@@ -1,0 +1,48 @@
+---
+- name: Install LAMP stack on Amazon Linux 2
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install Apache web server
+      yum:
+        name: httpd
+        state: present
+
+    - name: Start and enable Apache service
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: Install MySQL server
+      yum:
+        name: mariadb-server
+        name: mariadb
+        state: present
+
+    - name: Start and enable MySQL service
+      service:
+        name: mysqld
+        state: started
+        enabled: true
+
+    - name: Install PHP
+      yum:
+        name: php
+        state: present
+
+    - name: Install PHP modules
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - php-mysql
+        - php-pdo
+        - php-mbstring
+
+    - name: Restart Apache service
+      service:
+        name: httpd
+        state: restarted
+
