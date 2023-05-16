@@ -1,10 +1,18 @@
-variable "aws_access_key" {
-  type        = string
-  description = "AKIAT4X4SARV322NEOH7"
+variable "ami" {
+   type        = string
+   description = "Ubuntu AMI ID in N. Virginia Region"
+   default     = "ami-065deacbcaac64cf2"
 }
 
-variable "aws_secret_key" {
-  type        = string
-  description = "2/RjbBmnaZy/ZGVbE7Bulnq5YgfXct4WYFVVU17R"
+variable "instance_type" {
+   type        = string
+   description = "Instance type"
+   default     = "t2.micro"
+}
+
+variable "name_tag" {
+   type        = string
+   description = "Name of the EC2 instance"
+   default     = "My EC2 Instance"
 }
 
