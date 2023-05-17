@@ -12,10 +12,10 @@ pipeline {
         stage('Terraform') {
             steps {
                 // Run Terraform commands
-		sh 'cd terraform' 
-                sh 'terraform init -backend=false'
-		sh 'terraform plan'
-                sh 'terraform apply -auto-approve'
+		//sh 'cd terraform' 
+                 'terraform init -backend=false'
+		 'terraform plan'
+                 'terraform apply -auto-approve'
             }
         }
         
